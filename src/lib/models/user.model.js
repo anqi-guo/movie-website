@@ -1,6 +1,4 @@
 import mongoose from "mongoose";
-import { unique } from "next/dist/build/utils";
-import { title } from "wd/lib/commands";
 
 const favSchema = new mongoose.Schema({
   movieId: {
