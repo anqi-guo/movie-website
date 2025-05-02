@@ -1,13 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import ThemeToggle from "../theme/ThemeToggle";
-import {
-  SignInButton,
-  SignUpButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
-} from "@clerk/nextjs";
+import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
 const Header = () => {
   return (
