@@ -3,7 +3,7 @@
 import React from "react";
 import { ThemeProvider } from "next-themes";
 
-const Providers = ({ children }) => {
+const ThemeComp = ({ children }) => {
   return (
     <ThemeProvider
       attribute="class"
@@ -18,4 +18,4 @@ const Providers = ({ children }) => {
   );
 };
 
-export default Providers;
+export default ThemeComp;
