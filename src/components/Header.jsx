@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import ThemeToggle from "../theme/ThemeToggle";
 
 const Header = () => {
   return (
@@ -15,12 +16,15 @@ const Header = () => {
           <Link href="/">About</Link>
         </li>
       </ul>
-      <Link href="/" className="flex gap-1 items-center">
-        <span className="text-2xl bg-amber-500 rounded-lg py-1 px-2 font-bold">
-          IMDb
-        </span>
-        <span className="text-xl hidden sm:inline">Clone</span>
-      </Link>
+      <div className="flex items-center gap-4">
+        <ThemeToggle />
+        <Link href="/" className="flex gap-1 items-center">
+          <span className="text-2xl bg-amber-500 rounded-lg py-1 px-2 font-bold">
+            IMDb
+          </span>
+          <span className="text-xl hidden sm:inline">Clone</span>
+        </Link>
+      </div>
     </div>
   );
 };
