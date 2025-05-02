@@ -1,13 +1,25 @@
 import Link from "next/link";
 import React from "react";
 import ThemeToggle from "../theme/ThemeToggle";
+import {
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from "@clerk/nextjs";
 
 const Header = () => {
   return (
     <div className="flex justify-between items-center p-3 max-w-6xl mx-auto">
       <ul className="flex gap-4">
         <li>
-          <Link href="/">Sign in</Link>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
+          <SignedOut>
+            <Link href="/sign-in">Sign in</Link>
+          </SignedOut>
         </li>
         <li className="hidden sm:block">
           <Link href="/">Home</Link>
