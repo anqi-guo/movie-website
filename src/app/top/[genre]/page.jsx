@@ -1,7 +1,9 @@
-import React from "react";
+"use client";
 
-const page = () => {
-  return <div>Top pages</div>;
-};
+import { useParams } from "next/navigation";
+import MovieFetcher from "../../../components/MovieFetcher";
 
-export default page;
+export default function GenrePage() {
+  const { genre } = useParams();
+  return <MovieFetcher genre={genre} />;
+}
