@@ -24,7 +24,10 @@ export const PUT = async (req) => {
           favs: updatedFavs,
         },
       });
-      return new Response(JSON.stringify(updatedUser), { status: 200 });
+      return new Response(
+        JSON.stringify({ message: "Favorite removed", user: updatedUser }),
+        { status: 200, headers: { "Content-Type": "application/json" } }
+      );
     } else {
       const updatedUser = await User.findByIdAndUpdate(
         user.publicMetadata.userMongoId,
@@ -48,7 +51,10 @@ export const PUT = async (req) => {
           favs: updatedFavs,
         },
       });
-      return new Response(JSON.stringify(updatedUser), { status: 200 });
+      return new Response(
+        JSON.stringify({ message: "Favorite added", user: updatedUser }),
+        { status: 200, headers: { "Content-Type": "application/json" } }
+      );
     }
   } catch (error) {
     console.log("Error adding favs to the user:", error);
