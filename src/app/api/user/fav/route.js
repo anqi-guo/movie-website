@@ -9,7 +9,10 @@ export const PUT = async (req) => {
     await connectToDB();
     const data = await req.json();
     if (!user) {
-      return { status: 401, body: "Unauthorized" };
+      return new Response(JSON.stringify({ message: "Unauthorized" }), {
+        status: 401,
+        headers: { "Content-Type": "application/json" },
+      });
     }
     const existingUser = await User.findById(user.publicMetadata.userMongoId);
     if (existingUser.favs.some((fav) => fav.movieId === data.movieId)) {
