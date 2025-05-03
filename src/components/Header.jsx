@@ -19,6 +19,9 @@ const Header = () => {
           <Link href="/">Home</Link>
         </li>
         <li className="hidden sm:block">
+          <Link href="/favorites">Favorites</Link>
+        </li>
+        <li className="hidden sm:block">
           <Link href="/about">About</Link>
         </li>
       </ul>
