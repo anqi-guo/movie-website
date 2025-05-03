@@ -2,22 +2,16 @@
 import { useEffect, useState } from "react";
 
 const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
+const BASE_URL = "https://api.themoviedb.org/3";
 
-export default function useFetch({ genre = "trending", id = null } = {}) {
+export default function useFetch({ endpoint, query = "" } = {}) {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
-  const endpoint = id
-    ? `/movie/${id}`
-    : genre === "rated"
-    ? "/movie/top_rated"
-    : "/trending/all/week";
 
   useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3${endpoint}?api_key=${API_KEY}${
-        id ? "" : "&language=en-US&page=1"
-      }`
-    )
+    if (!endpoint) return;
+    const url = `${BASE_URL}${endpoint}?api_key=${API_KEY}&${query}`;
+    fetch(url)
       .then((res) => {
         if (!res.ok) throw new Error("Fetch failed");
         return res.json();
@@ -27,7 +21,7 @@ export default function useFetch({ genre = "trending", id = null } = {}) {
         setError(err);
         console.error(err);
       });
-  }, [endpoint, id]);
+  }, [endpoint, query]);
 
   return { data, error };
 }

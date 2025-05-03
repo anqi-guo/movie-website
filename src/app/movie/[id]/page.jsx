@@ -8,7 +8,7 @@ import AddToFav from "../../../components/AddToFav";
 
 const Movie = () => {
   const { id } = useParams();
-  const { data, error } = useFetch({ id });
+  const { data, error } = useFetch({ endpoint: `/movie/${id}` });
 
   if (error)
     return (
