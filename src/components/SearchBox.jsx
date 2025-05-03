@@ -19,12 +19,15 @@ const SearchBox = () => {
     >
       <input
         type="text"
-        placeholder="Search Movies"
-        className="w-full h-14 rounded-md placeholder-gray-500 outline-none bg-transparent flex-1"
+        placeholder="Search Movies..."
+        className="w-full h-14 rounded-md placeholder-gray-500 dark:placeholder-gray-200 outline-none bg-transparent flex-1"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
-      <button type="submit" className="text-amber-600 disabled:text-gray-400">
+      <button
+        type="submit"
+        className="text-gray-500 disabled:text-gray-200 dark:text-gray-200 dark:disabled:text-gray-500"
+      >
         Search
       </button>
     </form>
