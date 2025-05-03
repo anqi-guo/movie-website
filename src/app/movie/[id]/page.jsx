@@ -39,10 +39,17 @@ const Movie = () => {
             {data.release_date || data.first_air_date}
           </p>
           <p className="mb-3">
-            <span className="font-semibold mr-1">Rating:</span>
-            {data.vote_average} / 10
+            <span className="font-semibold mr-1">Vote Count:</span>
+            {data.vote_count}
           </p>
-          <AddToFav movie={data} />
+          <AddToFav
+            movieId={id}
+            title={data.title}
+            image={data.poster_path || data.backdrop_path}
+            overview={data.overview}
+            releaseDate={data.release_date || data.first_air_date}
+            voteCount={data.vote_count}
+          />
         </div>
       </div>
     </div>

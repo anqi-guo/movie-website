@@ -8,6 +8,7 @@ export const connectToDB = async () => {
     return;
   }
   try {
+    console.log("Connecting to MongoDB...");
     await mongoose.connect(process.env.MONGODB_URI, {
       dbName: "next-imdb",
       useNewUrlParser: true,
