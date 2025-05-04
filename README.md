@@ -23,7 +23,7 @@ This is a web application built with **Next.js** that replicates IMDb functional
 
 ## Deployment
 
-The project is deployed on [Vercel](https://vercel.com). You can access the live website here: [click](<h(https://movie-website-nine-beta.vercel.app/).>).
+The project is deployed on Vercel. You can access the live website [here](https://movie-website-nine-beta.vercel.app)
 
 ## TODO
 
