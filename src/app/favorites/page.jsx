@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import useFetch from "../hooks/useFetch";
 import Results from "../../components/Results";
 import { useUser } from "@clerk/nextjs";
 
@@ -11,8 +10,8 @@ const page = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch("/api/user/getFav", {
-          method: "PUT",
+        const res = await fetch("/api/user/fav", {
+          method: "GET",
           headers: {
             "Content-Type": "application/json",
           },
@@ -28,8 +27,7 @@ const page = () => {
     if (isLoaded && isSignedIn && user) {
       fetchData();
     }
-  }, [results, isLoaded, isSignedIn, user]);
-  console.log("Results:", results);
+  }, [isLoaded, isSignedIn, user]);
   return (
     <div>
       <Results
