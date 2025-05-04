@@ -12,12 +12,13 @@ This is a web application built with **Next.js** that replicates IMDb functional
 - **Search** for movies by title
 - Responsive UI with modern styling via **Tailwind CSS**.
 
-## Technologies
+## Tech Stack
 
-- **Next.js**: React-based framework for server-side rendering and routing.
+- **Next.js**: Handles both frontend and backend with server-rendered React and API routes.
 - **TMDB API**: Provides movie data for the application.
-- **Clerk**: Authentication service for managing user accounts and sessions.
-- **MongoDB**: NoSQL database for storing user data and favorites.
+- **Clerk**: Manages user authentication and metadata like favorites.
+- **MongoDB (with Mongoose)**: Stores user data and favorites in a flexible NoSQL database.
+- **Inngest**: Runs background jobs and handles async workflows like delayed tasks.
 - **Tailwind CSS**: Utility-first CSS framework for styling.
 - **next-themes**: For handling light and dark modes across the site.
 
